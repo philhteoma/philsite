@@ -22,8 +22,4 @@ if __name__ == "__main__":
         bind = "127.0.0.1" #local
         port = 5000
 
-    if len(sys.argv) == 2:
-        bind = sys.argv[1]
-
-
     app.run(host=bind, port=port)
