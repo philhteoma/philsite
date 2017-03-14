@@ -169,8 +169,9 @@ ul#menu li a:hover
 { color: #00C5EE;}
 
 #site_content
-{  margin-top: 10px;
+{ margin-top: 10px;
   width: 80%;
+  min-height: 400px;
   position: relative;
   overflow: hidden;}
 
@@ -219,7 +220,7 @@ ul#menu li a:hover
   font-size: 90%;
   height: 80px;
   padding: 20px 0px 4px 0px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   text-align: center;
   background: #313131;
   color: #A8AA94;
@@ -314,10 +315,21 @@ table tr td
   right: 0;
   align-self: center;
   overflow: hidden;
+  cursor: pointer;
+  color: #635B53;
+  text-decoration: none;
   border-style: groove;
   border-color: black;
   border-width: thick;
   background-color: white;}
+
+.project_box a:visited
+{ color: #635B53;
+  text-decoration: none;}
+
+.project_box a
+{ color: #635B53;
+  text-decoration: none;}
 
 .box_pic
 { height: 150px;
