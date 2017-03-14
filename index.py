@@ -26,6 +26,18 @@ def index():
 def projects():
     return render_template("projects.html")
 
+@app.route("/links")
+def links():
+    return render_template("links.html")
+
+@app.route("/blog")
+def blog():
+    return render_template("blog.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 #
 #-----Gavbot Rising-----
 #
