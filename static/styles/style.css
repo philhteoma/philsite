@@ -6,36 +6,24 @@ body
   margin: 0px;
   font-size: .78em;
   /*background: #F6F4F0;*/
-  background: AntiqueWhite;
-  color: #635B53;}
+  color: #635B53;
+  background: AntiqueWhite;}
 
 p
 { margin: 0px;
   padding: 0px 0px 16px 0px;
   line-height: 1.7em;}
 
-h1, h2, h3, h4
-{ font-size: 150%;
-  padding: 7px 0px 5px 0px;
-  margin: 0px 0px 12px 0px;
-  font-weight: normal;
-  color: #342F28;
-  font-family: serif;}
-
 h1, h3
 { text-transform: uppercase;
-  margin: 10px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
   padding: 5px 20px 5px 0px;
   border-bottom: 1px solid #CCC6B4;}
 
-a, a:hover
-{ border-bottom: 1px dotted;
-  color: #635B53;
-  text-decoration: none;}
-
-a:hover
-{ border-bottom: 1px solid;
-  color: #00C5EE;}
+#content h1
+{ text-align: center;
+  color: #262626;
+  font-size: 250%;}
 
 img
 { border: 0px;
@@ -60,22 +48,13 @@ form
 .center
 { display: block;
   text-align: center;
-  margin: 0 auto;}
+/  margin: 0 auto;}
 
 blockquote
 { margin: 20px 0px 20px 0px;
   padding: 10px 20px 0px 20px;
   border: 1px solid #E5E5DB;
   background: #FFF;}
-
-ul
-{ margin: 2px 0px 18px 16px;
-  padding: 0px;}
-
-ul li
-{ list-style-type: square;
-  margin: 0px 0px 6px 0px;
-  padding: 0px;}
 
 ol
 { margin: 8px 0px 0px 24px;
@@ -92,15 +71,10 @@ ol li
 #header
 { background: url(back.png) repeat-x;}
 
-/*#header
-{background-color: #0d0d0d;}*/
-
 #logo
-{ width: 870px;
+{ width: 1000px;
   height: 127px;
-  position: relative;
-  /*vertical-align: bottom;*/
-  /*background: transparent url(logo.png) no-repeat right;*/}
+  position: relative;}
 
 #logo #logo_text
 { position: absolute;
@@ -115,20 +89,22 @@ ol li
 
 #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover
 { padding: 22px 0 0 0;
-  color: #777;
   letter-spacing: 0.1em;
   text-decoration: none;}
 
-#logo_text h1 a .logo_colour
-{ color: #00C5EE;}
+.index
+{ color: #777}
 
-#logo_text a:hover .logo_colour
-{ color: #777;}
+.logo_colour
+{ color: #00C5EE}
+
+.logo_colour:hover
+{ color: #777}
 
 #logo_text h2
 { font-size: 120%;
-  padding: 4px 0 0 0;
-  color: #BBB;}
+  /*color: #BBB;*/
+  padding: 4px 0 0 0;}
 
 #logo h1, #logo h2
 { margin: 0;
@@ -225,10 +201,10 @@ ul#menu li a:hover
 
 #content
 { text-align: left;
-  width: 624px;
+  width: 100%;
   float: left;
-  border-style: solid;
-  border-color: red;
+  /*border-style: solid;
+  border-color: red;*/
   padding: 20px 10px 15px 0px;}
 
 #content_projects
@@ -355,5 +331,34 @@ table tr td
 .project_text
 { font-size: 120%}
 
-/*.Title
-{ font-size: 120%}*/
+.code_snippet
+{ height: auto;
+  width: 30%;
+  top: 20px;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+  font-family: Lucida Console;
+  font-size: 90%;
+  margin: 0px;
+  position: relative;
+  left: 0%;
+  right: 0;
+  align-self: center;
+  /*border-style: groove;
+  border-color: gray;
+  border-width: thick;*/
+  /*background-color: white;*/
+  overflow: hidden;}
+
+.main_page_div
+{ width: 67%;
+  top: 0;
+  float: right;
+  color: black;
+  overflow: hidden;
+  /*border-style: groove;
+  border-color: black;
+  display: inline-block;
+  background-color: white;*/
+  top: 0;}
