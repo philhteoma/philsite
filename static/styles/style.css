@@ -4,14 +4,14 @@ body
 { font-family: "lucida sans", arial, sans-serif;
   padding: 0px;
   margin: 0px;
-  font-size: .78em;
+  font-size: .85em;
   /*background: #F6F4F0;*/
   color: #635B53;
   background: AntiqueWhite;}
 
 p
 { margin: 0px;
-  padding: 0px 0px 16px 0px;
+  padding: 0px 0px 5px 0px;
   line-height: 1.7em;}
 
 h1, h3
@@ -23,7 +23,8 @@ h1, h3
 #content h1
 { text-align: center;
   color: #262626;
-  font-size: 250%;}
+  /*font-size: 250%;*/
+}
 
 img
 { border: 0px;
@@ -78,7 +79,7 @@ ol li
 
 #logo #logo_text
 { position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   height: 50px;}
 
 #logo h1, #logo h2
@@ -170,35 +171,23 @@ ul#menu li a:hover
 
 #site_content
 { margin-top: 10px;
-  width: 80%;
+  width: 85%;
   min-height: 400px;
   position: relative;
   overflow: hidden;}
 
 .sidebar
 { float: right;
-  width: 178px;
-  padding: 20px 25px 15px 15px;}
+  border-style: groove;
+  border-color: gray;
+  border-width: thick;
+  background-color: white;
+  width: 15%;
+  padding: 20px 15px 15px 15px;
+}
 
-.sidebar ul
-{ width: 178px;
-  padding-top: 4px;
-  margin: 4px 0px 30px 0px;}
-
-.sidebar li
-{ list-style: none;
-  padding: 0px 0px 2px 0px; }
-
-.sidebar li a, .sidebar li a:hover
-{ text-decoration: none;
-  padding: 4px 0px 4px 35px;
-  display: block;
-  background: transparent url(arrow.png) no-repeat left center;
-  color: #555;
-  border: none;}
-
-.sidebar li a.selected, .sidebar li a:hover, .sidebar li a.selected:hover
-{ color: #A4AA04;}
+#sidebar_title
+{ font-size: 150%;}
 
 #content
 { text-align: left;
@@ -236,76 +225,12 @@ ul#menu li a:hover
 { color: #FFF;
   text-decoration: none;}
 
-.search
-{ width: 122px;
-  border: 1px solid #CCC6B4;
-  padding: 4px;
-  color: #635B53;}
-
-.form_settings
-{ margin: 15px 0 0 0;}
-
-.form_settings p
-{ padding: 0 0 4px 0;}
-
-.form_settings span
-{ float: left;
-  width: 200px;
-  text-align: left;}
-
-.form_settings input, .form_settings textarea
-{ padding: 5px;
-  width: 299px;
-  font: 100% arial;
-  border: 1px solid #E5E5DB;
-  background: #FFF;
-  color: #47433F;}
-
-.form_settings .submit
-{ font: 100% arial;
-  border: 1px solid;
-  width: 99px;
-  margin: 0 0 0 212px;
-  height: 33px;
-  padding: 2px 0 3px 0;
-  cursor: pointer;
-  background: #3B3B3B;
-  color: #FFF;}
-
-.form_settings textarea, .form_settings select
-{ font: 100% arial;
-  width: 299px;}
-
-.form_settings select
-{ width: 310px;}
-
-.form_settings .checkbox
-{ margin: 4px 0;
-  padding: 0;
-  width: 14px;
-  border: 0;
-  background: none;}
-
 .separator
 { width: 100%;
   height: 0;
   border-top: 1px solid #D9D5CF;
   border-bottom: 1px solid #FFF;
   margin: 0 0 20px 0;}
-
-table
-{ margin: 10px 0 30px 0;}
-
-table tr th, table tr td
-{ background: #3B3B3B;
-  color: #FFF;
-  padding: 7px 4px;
-  text-align: left;}
-
-table tr td
-{ background: #FFF;
-  color: #47433F;
-  border-top: 1px solid #FFF;}
 
 .project_box
 { height: 150px;
@@ -337,7 +262,8 @@ table tr td
   float: left;}
 
 .box_text
-{ width: 80%;
+{ width: 82%;
+  right: 5px;
   float: right;}
 
 .project_text
@@ -374,6 +300,22 @@ table tr td
   display: inline-block;
   background-color: white;*/
   top: 0;}
+
+.blog_page_div
+{ width: 75%;
+  top: 0;
+  float: right;
+  color: black;
+  overflow: hidden;
+  margin: 0px 10px 0px 0px;
+  /*border-style: groove;
+  border-color: black;
+  display: inline-block;
+  background-color: white;*/
+  top: 0;}
+
+.blog_page_div h1
+{ font-size: 250%;}
 
 #links
 { color: black;}

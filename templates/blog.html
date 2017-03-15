@@ -33,6 +33,24 @@
     <div id="content_header"></div>
     <div id="site_content">
       <div id="content">
+        <div class="sidebar">
+          <h1 id="sidebar_title">Archive</h1>
+          {% for page in blog.archive %}
+            <p><a href="/blog/{{ page[0] }}">{{ page[1] }}</a>
+          {% endfor %}
+        </div>
+        <div class="blog_page_div">
+          <h1>{{ page.page_title }}</h1>
+          {{ page.page_text }}
+          <div style="clear:both">
+            {% if page.page_index != blog.max_index %}
+              <h4 style="float: left"><a href="/blog/{{ page.formal_name }}--older">&#60;&#60;&#60;Older</a></h4>
+            {% endif %}
+            {% if page.page_index != 0 %}
+             <h4 style="float: right"><a href="/blog/{{ page.formal_name }}--newer">Newer&#62;&#62;&#62;</a></h4>
+            {% endif %}
+          </div>
+        </div>
       </div>
     </div>
     <div id="content_footer"></div>

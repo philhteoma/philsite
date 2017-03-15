@@ -1,0 +1,2 @@
+<title>FAKE POST ONE<title>
+<text>Hello i am fake<text>

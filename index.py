@@ -6,6 +6,7 @@ import gavbot_page_manager
 import os
 import json
 import socket
+import blog_manager
 
 app = Flask(__name__)
 app.jinja_env.autoescape = False
@@ -13,6 +14,7 @@ current_bots = {}
 host_name = socket.gethostname()
 app.secret_key = os.urandom(32)
 logged_sessions = []
+blog_object = blog_manager.Blog()
 
 #
 #-----Main Page-----
@@ -30,13 +32,28 @@ def projects():
 def links():
     return render_template("links.html")
 
-@app.route("/blog")
-def blog():
-    return render_template("blog.html")
-
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+#
+#-----Blog-----
+#
+
+@app.route("/blog")
+def blog():
+    page_object = blog_object.load_page()
+    return render_template("blog.html", blog=blog_object, page=page_object)
+
+@app.route('/blog/', defaults={'path': ''})
+@app.route('/blog/<path:path>')
+def blog_request(path):
+    print(path)
+    page_object = blog_object.load_page(path)
+    if page_object.request:
+        return redirect("/blog/{}".format(page_object.formal_name))
+    else:
+        return render_template("blog.html", blog=blog_object, page=page_object)
 
 #
 #-----Gavbot Rising-----
