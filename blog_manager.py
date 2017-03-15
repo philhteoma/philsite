@@ -6,6 +6,7 @@ class Blog:
             raw_archive = file.readlines()
         self.archive = [tuple(re.split("\|", x[:-1])) for x in raw_archive]
         self.archive.sort(key=lambda x: int(re.sub("/", "", x[1])))
+        self.archive.reverse()
         self.archive = [(re.sub(" ", "_", x[0].lower()), x[0], x[1]) for x in self.archive]
         self.max_index = len(self.archive) - 1
         print(self.archive)
