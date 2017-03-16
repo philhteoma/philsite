@@ -1,6 +1,6 @@
 philsite/__init__.py
 philsite/blog_manager.py
-philsite/gavbot_page_manager.py
+philsite/project_noble_hq.py
 philsite.egg-info/PKG-INFO
 philsite.egg-info/SOURCES.txt
 philsite.egg-info/dependency_links.txt

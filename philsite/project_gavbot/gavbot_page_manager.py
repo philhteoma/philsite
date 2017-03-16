@@ -27,7 +27,7 @@ class PageManager:
         return page_data
 
     def load_page(self, gavbot):
-        file_path = "gavbot/pages/act_" + str(gavbot.current_act) + "/" + str(gavbot.current_page) + ".txt"
+        file_path = "{}pages/act_{}/{}.txt".format(gavbot.path, str(gavbot.current_act), str(gavbot.current_page))
         with open(file_path, "r") as file:
             raw_text = file.read()
         page_data = self.interpret_page(raw_text, gavbot)
@@ -35,17 +35,16 @@ class PageManager:
 
 class Gavbot:
     def __init__(self, owner):
+        self.pic = "static/images/gavbot.jpg"
+        self.health_pic = "static/images/heart.jpg"
+        self.path = "philsite/project_gavbot/"
         try:
             self.manager = PageManager()
             self.load_gav(owner)
-            self.pic = "static/images/gavbot.jpg"
-            self.health_pic = "static/images/heart.jpg"
         except FileNotFoundError:
             self.owner = owner
             self.manager = PageManager()
             self.health = 3
-            self.pic = "static/images/gavbot.jpg"
-            self.health_pic = "static/images/heart.jpg"
             self.traits = []
             self.inventory = []
             self.current_act = 1
@@ -87,7 +86,7 @@ class Gavbot:
         self.save_gav()
 
     def save_gav(self):
-        file_name = "gavbot/saved_gavbots/" + self.owner + ".json"
+        file_name = "{}saved_gavbots/{}.json".format(self.path, self.owner)
         data = {
             "owner": self.owner,
             "health": self.health,
@@ -100,7 +99,7 @@ class Gavbot:
             file.write(data_dumps)
 
     def load_gav(self, owner):
-        file_name = "gavbot/saved_gavbots/" + owner + ".json"
+        file_name = "{}saved_gavbots/{}.json".format(self.path, owner)
         with open(file_name, "r") as file:
             data = json.loads(file.read())
         self.owner = data["owner"]

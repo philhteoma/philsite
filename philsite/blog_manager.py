@@ -2,7 +2,7 @@ import re
 
 class Blog:
     def __init__(self):
-        with open("blog/archive/archive.txt", "r") as file:
+        with open("philsite/blog/archive/archive.txt", "r") as file:
             raw_archive = file.readlines()
         self.archive = [tuple(re.split("\|", x[:-1])) for x in raw_archive]
         self.archive.sort(key=lambda x: int(re.sub("/", "", x[1])))
@@ -47,7 +47,7 @@ class BlogPage:
 
 
     def format_page(self):
-        with open("blog/posts/" + self.formal_name + ".txt", "r") as file:
+        with open("philsite/blog/posts/" + self.formal_name + ".txt", "r") as file:
             self.raw_text = file.read()
         split = re.split("<title>", self.raw_text)
         self.page_title = split[1]
