@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <title>Wiki in the Valley-o'</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css_in_the_valley_o.css') }}">
 <script>
 function sendData(form) {
   var xhttp = new XMLHttpRequest();
@@ -35,24 +36,27 @@ function test() {
 };
 </script>
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css_in_the_valley_o.css') }}">
-<div class="leftBufferDiv">
-</div>
-<div class="headerDiv">
-  <h1 align="center"><u>WIKI IN THE VALLEY-O'</u></h1>
-  <h3 align="center">A script to generate classic Irish folk songs</h3>
-</div>
-<div class="rightBufferDiv">
-  <h3 align="right"><a href="wiki_in_the_valley_o/about">What is this?</a></h3>
-</div>
-<div class="topDiv" id="topDiv">
-  <form id="wikiInput">
-    <input class="wikiFormInput" type="text" name="url" value="Put a wiki link here!">
-    <input id="inputButton" class="wikiFormButton" type="button" value ="Submit Link" onclick="grabSong(this.form)">
-</div>
-<div class="leftDiv" id="leftDiv">
-  <pre id="chain_id" class="chain">ChainHere</pre>
-</div>
-<div class="rightDiv" id="rightDiv" align="right">
-  <pre id="lyrics_id" class="lyrics" align="left">Song Here</pre>
-</div>
+<body>
+  <div class="headerDiv" style="clear:both">
+    <div id="title">
+      <h1><u>WIKI IN THE VALLEY-O'</u></h1>
+      <h3>A script to generate classic Irish folk songs</h3>
+    </div>
+    <div id="about">
+      <h3><a href="wiki_in_the_valley_o/about">What is this?</a></h3>
+    </div>
+  </div>
+  <div id="content">
+    <div class="topDiv" id="topDiv">
+      <form id="wikiInput">
+        <input class="wikiFormInput" type="text" name="url" value="Put a wiki link here!">
+        <input id="inputButton" class="wikiFormButton" type="button" value ="Submit Link" onclick="grabSong(this.form)">
+    </div>
+    <div class="leftDiv" id="leftDiv">
+      <pre id="chain_id" class="chain">ChainHere</pre>
+    </div>
+    <div class="rightDiv" id="rightDiv" align="right">
+      <pre id="lyrics_id" class="lyrics" align="left">Song Here</pre>
+    </div>
+  </div>
+</body>

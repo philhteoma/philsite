@@ -1,5 +1,6 @@
 body {
-  background-color: lightgreen;
+  background-color: black;
+  margin: 0px;
 }
 
 .leftBufferDiv {
@@ -9,18 +10,46 @@ body {
 
 .headerDiv {
   display: inline-block;
-  left: 25vw;
-  width: 50vw;
-}
+  background-color: black;
+  color: lightgreen;
+  height: 120px;
+  width: 100%;
+  margin: 0 0 0 0;}
 
-.rightBufferDiv {
-  display: inline-block;
-  width: 20vw;
-}
+#title
+{ float: left;
+  width: 50%;
+  height: 100%;
+  margin-left: 25%;}
+
+#title h1, #title h3
+{ text-align: center;}
+
+#about
+{ float: right;
+  width: 25%;
+  height: 100%;
+  position: relative;}
+
+#about h3
+{ position: absolute;
+  bottom: 0;
+  right: 30%;}
+
+#content
+{ background-color: white;
+  min-height: 550px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 10px;}
 
 .topDiv {
   display: inline-block;
-  width: 97vw;
+  width: 90%;
+  background-color: lightgreen;
+  padding: 10px 5px 10px 5px;
+  border-style: groove;
+  margin: 0 5% 0 5%;
   /*border: 5px solid red;*/
 }
 
@@ -38,8 +67,8 @@ body {
 
 .leftDiv {
   display: inline-block;
-  width: 20vw;
-  height: 75vh;
+  width: 20%;
+  height: 80%;
   /*border: 5px solid red;*/
 }
 
@@ -55,13 +84,13 @@ body {
   display: inline-block;
   float: right;
   text-align: left;
-  width: 75vw;
-  height: 75vh;
+  height: 100%;
+  width: 75%;
   /*border: 5px solid red;*/
 }
 
 .lyrics {
-  float: left;
+  float: right;
   background-color: white;
   height: 95%;
   width: 95%;
