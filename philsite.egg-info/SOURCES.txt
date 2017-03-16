@@ -1,0 +1,8 @@
+philsite/__init__.py
+philsite/blog_manager.py
+philsite/gavbot_page_manager.py
+philsite.egg-info/PKG-INFO
+philsite.egg-info/SOURCES.txt
+philsite.egg-info/dependency_links.txt
+philsite.egg-info/requires.txt
+philsite.egg-info/top_level.txt

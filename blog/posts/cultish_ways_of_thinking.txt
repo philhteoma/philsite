@@ -1,9 +1,0 @@
-<title>Cultish ways of thinking<title>
-<text>What is a cult?
-
-<ul>
-<li>According to {{merriam-webster|https://www.merriam-webster.com/dictionary/cult}}, its anything from a formal religious orginisation to a group of people wholly obsessed with something</li>
-<li>Acording to {{Christianity Today|http://www.christianitytoday.com/iyf/advice/faithqa/what-is-cult.html}}, its a following which is Exclusive, Secretive and Authoritarian</li>
-<li>According to {{Urban Dictionary|http://www.urbandictionary.com/define.php?term=cult&defid=169012}}, its something you don’t know you’re in until the last ten minutes.</li>
-</ul>
-<text>
