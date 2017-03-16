@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<title>Wiki in the Valley-o'</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css_in_the_valley_o.css') }}">
+<script>
+function sendData(form) {
+  var xhttp = new XMLHttpRequest();
+  var fd = new FormData(form);
+  console.log("in sendData");
+  xhttp.open("POST", "/wiki_in_the_valley_o/get_song");
+  xhttp.send(fd);
+  xhttp.onreadystatechange=function() {
+     if (xhttp.readyState==4) {
+      var response=(xhttp.responseText);
+      console.log("got here");
+      response_get(response);
+    };
+  };
+
+};
+
+function response_get(result) {
+  var result_list = eval('(' + result + ')');
+  document.getElementById("chain_id").innerHTML = result_list[0];
+  document.getElementById("lyrics_id").innerHTML = result_list[1];
+  document.getElementById("inputButton").value = "Submit Link";
+};
+
+function grabSong(form) {
+  document.getElementById("inputButton").value = "loading...";
+  console.log("in grabSong");
+  sendData(form);
+};
+
+function test() {
+  console.log("testing...")
+};
+</script>
+
+<body>
+  <div class="headerDiv" style="clear:both">
+    <div id="title">
+      <h1><u>WIKI IN THE VALLEY-O'</u></h1>
+      <h3>A script to generate classic Irish folk songs</h3>
+    </div>
+    <div id="about">
+      <h3><a href="wiki_in_the_valley_o/about">What is this?</a></h3>
+    </div>
+  </div>
+  <div id="content">
+    <div class="topDiv" id="topDiv">
+      <form id="wikiInput">
+        <input class="wikiFormInput" type="text" name="url" value="Put a wiki link here!">
+        <input id="inputButton" class="wikiFormButton" type="button" value ="Submit Link" onclick="grabSong(this.form)">
+    </div>
+    <div class="leftDiv" id="leftDiv">
+      <pre id="chain_id" class="chain">ChainHere</pre>
+    </div>
+    <div class="rightDiv" id="rightDiv" align="right">
+      <pre id="lyrics_id" class="lyrics" align="left">Song Here</pre>
+    </div>
+  </div>
+</body>

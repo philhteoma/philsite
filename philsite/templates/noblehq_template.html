@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/nobles_stylesheet.css') }}">
+<title>Noble Hq</title>
+
+<script>
+function sendData(form) {
+  var xhttp = new XMLHttpRequest();
+  var fd = new FormData(form);
+  console.log("in sendData");
+  xhttp.open("POST", "/noble_hq/nobles_play");
+  xhttp.send(fd);
+  xhttp.onreadystatechange=function() {
+     if (xhttp.readyState==4) {
+      var raw_response=(xhttp.responseText);
+      console.log("got here");
+      var response = eval('(' + raw_response + ')');
+      document.getElementById("infobox").innerHTML = response[0];
+      document.getElementById("nobleList").innerHTML = response[1];
+    };
+  };
+
+};
+</script>
+
+<div class="leftSide">
+  <h1 class="headerBoxOne">NOBLE HEADQUARTERS</h1>
+  <h3 class="headerBoxTwo">Play God</h3>
+  <button type="button" onclick="createNoble()">Create Noble</button>
+  <button type="button" onclick="deleteAll()">Start Apocalypse</button>
+  <h3 class="headerBoxTwo">Noble Management</h3>
+  <form id="myForm" method="post">
+    <select id="nobleList" name="noble">
+      {% for item in name_list %}
+        <option value={{item[1]}}>{{item[0]}}</option>
+      {% endfor %}
+    </select>
+    <select name="action">
+      <option value="viewInfo">View Info</option>
+      <option value="executeNoble">Execute Noble</option>
+    </select>
+    <input type="submit" value="Do the thing">
+  </form>
+  <h3 class="headerBoxTwo">Noble Playground</h3>
+  <form>
+    <input type="button" value="Let the nobles play!" onclick="sendData(this.form)">
+  </form>
+</div>
+<div class="infoBoxDiv">
+  <pre id="infobox" class="infoBox">Info goes here</pre>
+</div>
+<br>
+<script>
+window.addEventListener("load", function() {
+  function sendData() {
+    var xhttp = new XMLHttpRequest;
+    var fd = new FormData(form);
+
+    xhttp.addEventListener("load", function(event) {
+      var raw_response = event.target.responseText;
+      var response = eval('(' + raw_response + ')');
+      console.log(response);
+//    document.getElementById("infobox").innerHTML = event.target.responseText
+      document.getElementById("infobox").innerHTML = response[0];
+      if (response[1]) {document.getElementById("nobleList").innerHTML = response[1]};
+    });
+
+    xhttp.open("POST", "/noble_hq/noblepost");
+    xhttp.send(fd);
+  }
+  var form = document.getElementById("myForm");
+
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    sendData();
+  });
+});
+
+</script>
+
+<script>
+
+function createNoble() {
+  getRequest("/noble_hq/createnoble")
+}
+
+function deleteAll() {
+  getRequest("/noble_hq/deleteall")
+}
+
+function getRequest(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      var raw_response = xhttp.responseText;
+      var response = eval('(' + raw_response + ')');
+      document.getElementById("infobox").innerHTML = response[0];
+      document.getElementById("nobleList").innerHTML = response[1]
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send()
+}
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/about_wiki.css') }}">
+<div class="leftBufferDiv">
+</div>
+<div class="headerDiv">
+  <h1 class="topHeader" align="center"><u>What is "Wiki Down in the Valley-o'"?</u></h1>
+</div>
+<div class="rightBufferDiv">
+  <h3 align="right"><a href="/wiki_in_the_valley_o">back</a></h3>
+</div>
+<div class="firstParagraph">
+  <p>It's a mashup of two completely unrelated things: </p>
+  <ul>
+    <li>The link-following game on wikpedia called <a href="https://en.wikipedia.org/wiki/Wikipedia:Getting_to_Philosophy"> getting to philosophy.</a></li>
+    <li>The Irish folk song <a href="http://www.thebards.net/music/lyrics/Bog_Down_In_The_Valley.shtml">Bog Down in the Valley.</a></li>
+  </ul>
+  <p>Submitting a link starts a script which trawls through Wikipedia, clicking on the first link in the main body of text
+    (that isn't in parenthesis) each time. When it gets to the philosophy article - or it finds itself in a loop - it takes
+    the links it's found, and builds them into a brand new version of Bog Down in the Valley! The wiki articles it found on
+    the way are displayed on the left, for your enjoyment.
+  </p>
+</div>
+<div class="secondParagraph">
+  <h3><u>How does the script work?</u></h3>
+  <p>The short answer to this question is "regular expressions"</p>
+  <p>The slightly longer answer is "one regular expression, used by someone who has never used regular expressions before"</p>
+  <p>The <i>extended</i> answer is this:</p>
+  <ol>
+    <li>Pull the requested page from wikipedia. Is the article "philosophy"? If it is, we're done. Otherwise,
+      time to search for links.</li>
+    <li>We have a lot of html to get through, so let's start pruning. If it's not in a table, it's not allowed,
+      so we can get rid of anything in between &lt;table&gt; tags. Since finesse is not one of my finer points,
+      I use the regular expression equivilent of a hacksaw to do this. ("&lt;table.*?&lt;/table&gt;") </li>
+    <li>Well it turns out that's not <i>quite</i> enough to get rid of all the tables. I had to write a python snippet
+      to deal with tables inside tables. But it all worked out in the end!</li>
+    <li>Ok, now we've got rid of all the tables. Turns out we don't need to get rid of much more just yet. Instead,
+        let's grab anything that's in &lt;p&gt; or &lt;li&gt; tags.</li>
+    <li>Now we're going to take all the links in the first paragraph or list we found, and store them in a table. I'll
+      tell you why later.</li>
+    <li>Ok, so we aren't allowed links in parenthesis. Let's take the regex hacksaw from step two and use it to cut out
+      anything in between parenthses in the paragraph/list we're looking at.</li>
+    <li>Now we take whatever links are left. We aren't allowed links in italics, but luckily for us they all go to wiki
+      help pages, which is helpfully signalled in the url itself. Le's get rid of the offending links.
+      We don't need a regex hacksaw for this, a regular old python hacksaw is fine.</li>
+    <li>Do we have any links left? If we do, hooray! The first link left is the one we need. Otherwise, repeat from step 5
+      for the next paragraph/list. </li>
+    <li>Well, actually, we aren't done yet. See, some wikipedia links follow a format like "wiki/Quality_(Philosophy)", and
+      our hacksaw method will quite happily reduce that to "wiki/Quality_". How do we fix this?</li>
+    <li>Remember that list we made in step 5? It's going to have the full, un-hacksawed urls in it. So we can use that list
+      as a reference to rebuild the urls we mangled, and ensure our first link is the <i>correct</i> first link. </li>
+    <li>Is that link the Philosophy article, or have we already visited it? If it is, we're done! Otherwise, repeat from
+      step one</li>
+  </ol>
+  <p>After that, it's just a matter of chopping up the urls and arraging them to classic Irish folk music. Easy!</p>
+  <p><a href="/wiki_in_the_valley_o">back</a></p>
+</div>
