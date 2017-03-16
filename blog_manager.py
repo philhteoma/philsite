@@ -9,7 +9,6 @@ class Blog:
         self.archive.reverse()
         self.archive = [(re.sub(" ", "_", x[0].lower()), x[0], x[1]) for x in self.archive]
         self.max_index = len(self.archive) - 1
-        print(self.archive)
 
     def load_page(self, request_string=""):
         if request_string:

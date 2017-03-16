@@ -1,0 +1,22 @@
+body {
+  background-color: lightgreen;
+}
+
+.leftBufferDiv {
+  display: inline-block;
+  width: 15vw;
+}
+
+.headerDiv {
+  display: inline-block;
+  left: 25vw;
+  width: 65vw;
+}
+
+.rightBufferDiv {
+  display: inline-block;
+  width: 15vw;
+}
+
+.topHeader {
+}
