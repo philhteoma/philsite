@@ -11,6 +11,7 @@ def gavbot_index():
         logged_sessions.append(request.remote_addr)
         gavbot_log_addr(request.remote_addr)
     if 'username' in session:
+        print(current_bots[session['username']].current_page)
         return render_template("gavbot_index.html", gavbot=current_bots[session['username']])
     else:
         return render_template("gavbot_index_null.html")

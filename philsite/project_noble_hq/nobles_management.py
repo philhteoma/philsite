@@ -299,8 +299,6 @@ class NobleInstance(NobleManager):
 
     def welcome_noble(self, new_noble):
         if new_noble.surname == self.surname:
-            print(new_noble.surname)
-            print(self.surname)
             friendship = 10
         else:
             friendship = random.randint(1, 9)

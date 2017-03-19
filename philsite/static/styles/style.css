@@ -20,11 +20,11 @@ h1, h3
   padding: 5px 20px 5px 0px;
   border-bottom: 1px solid #CCC6B4;}
 
-#content h1
+/*#content h1
 { text-align: center;
   color: #262626;
-  /*font-size: 250%;*/
-}
+  font-size: 250%;
+}*/
 
 img
 { border: 0px;
@@ -196,6 +196,10 @@ ul#menu li a:hover
   /*border-style: solid;
   border-color: red;*/
   padding: 20px 10px 15px 0px;}
+
+#content h1
+{ font-size: 300%;
+  text-align: center;}
 
 #content_projects
 { text-align: left;

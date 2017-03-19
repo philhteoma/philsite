@@ -11,16 +11,13 @@ def noblehq():
 
 @app.route(path+"/noblepost", methods=["GET", "POST"])
 def noblepost():
-    print("Mark 1")
     name_list = NobleManager.id_lookup
     try:
         if request.method == "GET":
             pass
         if request.method == "POST":
-            print("Mark 2")
             action = (request.form["action"])
             if action == "viewInfo":
-                print("Mark 3")
                 name = NobleManager.get_name_from_id(request.form["noble"])
                 function_return = NobleManager.view_single_noble(name)
             if action == "executeNoble":
@@ -56,7 +53,6 @@ def deleteall():
 @app.route(path+"/nobles_play", methods=["POST"])
 def nobles_play():
     function_return = NobleManager.run_events()
-    print(function_return)
     name_list = NobleManager.id_lookup
     name_list = list_to_option_string(name_list)
     response = (function_return, name_list)

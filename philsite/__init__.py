@@ -1,10 +1,13 @@
 import sys
 from flask import Flask, render_template, request, make_response, redirect, session
+import requests
 import re
 import jinja2
 import os
 import json
 import socket
+
+#import xml.etree.ElementTree
 
 app = Flask(__name__)
 
@@ -36,7 +39,19 @@ def links():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    # print("!!!")
+    # e = xml.etree.ElementTree.parse("philsite/blog/posts/xml_test.xml").getroot()
+    # for i in e:
+    #     print(i)
+    #     for n in i:
+    #         print(n)
+    #     print("")
+    # print(dir(e))
+    # print(e.items())
+    with open("philsite/blog/posts/xml_test.xml", "r") as file:
+        e = file.read()
+    print(e)
+    return render_template("about.html", xml_file=e)
 
 #
 #-----Blog-----
@@ -57,6 +72,12 @@ def blog_request(path):
     else:
         return render_template("blog.html", blog=blog_object, page=page_object)
 
+@app.route("/rss.xml")
+def rss():
+    with open ("rss.xml", "r") as file:
+        rss_file = file.read()
+    return(rss_file)
+
 
 #
 #-----Making it run-----
@@ -65,6 +86,8 @@ def blog_request(path):
 if __name__ == "__main__":
 
     host_name = socket.gethostname()
+    print(host_name)
+
 
     if host_name == "Gavbot":
         bind = "192.168.1.3"

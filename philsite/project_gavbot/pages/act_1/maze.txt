@@ -1,0 +1,5 @@
+<title>M.O.G.<title>
+<text>Where were you going again?<text>
+<items><items>
+<choice>Head upstairs<page>maze_floor_one<req>
+<choice>Head downstairs<page>maze_downstairs<req>

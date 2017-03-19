@@ -30,10 +30,16 @@
               <h2> GAVBOT STATUS </h2>
               <img class="gavbot" src="{{ gavbot.pic }}">
               <h3>Name: {{ gavbot.owner }}</h3>
-              <h3>Health:</h3>
-              <img class="heart" src="{{ gavbot.health_pic}}">
-              <img class="heart" src="{{ gavbot.health_pic}}">
-              <img class="heart" src="{{ gavbot.health_pic}}">
+              <div id="health_div">
+                <div id="health_title" style="clear.both">
+                  <h3 style="float: left">H:</h3>
+                </div>
+                <div id="heart_icons">
+                  <img class="heart" src="{{ gavbot.health_pic}}" style="float: right">
+                  <img class="heart" src="{{ gavbot.health_pic}}" style="float: right">
+                  <img class="heart" src="{{ gavbot.health_pic}}" style="float: right">
+                </div>
+              </div>
               <h3>Traits</h3>
               <p> - {{ gavbot.traits }}
               <h3>Inventory</h3>
@@ -61,9 +67,11 @@
         <h2 align="center">{{ gavbot.page_title }}</h2>
         {{ gavbot.page_text }}
         {% for choice in gavbot.page_choices %}
-          <form action={{ "/gavbot/page/" + choice[1] }}>
-            <input class="button" type="submit" value="{{ choice[0] }}">
-          </form>
+          {% if choice[0] %}
+            <form action={{ "/gavbot/page/" + choice[1] }}>
+              <input class="button" type="submit" value="{{ choice[0] }}">
+            </form>
+          {% endif %}
         {% endfor %}
         <p>
       </div>
