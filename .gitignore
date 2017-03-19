@@ -1,6 +1,8 @@
 *.pyc
 /philsite/log/*
+!/philsite/log/.gitkeep
 /philsite/project_gavbot/saved_gavbots/*
+!philsite/project_gavbot/saved_gavbots/.gitkeep
 /philsite/project_gavbot/log/*
 /philsite.egg-info/*
 run_app.sh
