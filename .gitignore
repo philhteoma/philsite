@@ -2,5 +2,5 @@
 /philsite/log/*
 /philsite/project_gavbot/saved_gavbots/*
 /philsite/project_gavbot/log/*
-/philsite.egg-info/SOURCES.txt
+/philsite.egg-info/*
 run_app.sh
