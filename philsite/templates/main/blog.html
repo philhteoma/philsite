@@ -6,7 +6,7 @@
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main/style.css') }}" />
 </head>
 
 <body>
@@ -24,8 +24,8 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="/">Home</a></li>
           <li><a href="/projects">Projects</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li class="selected"><a href="/links">Cool Things</a></li>
+          <li class="selected"><a href="/blog">Blog</a></li>
+          <li><a href="/links">Cool Things</a></li>
           <li><a href="/about">About</a></li>
         </ul>
       </div>
@@ -33,25 +33,26 @@
     <div id="content_header"></div>
     <div id="site_content">
       <div id="content">
-        <div class="code_snippet">
-        <!-- insert the page content here -->
-          <p class="code_text">
-          >>>&emsp;import Internet<br />
-          >>>&emsp;<br />
-          >>>&emsp;links = Internet.links<br />
-          >>>&emsp;cool_links = [x for x in links if x.temp == "cool"]<br />
-          >>>&emsp;<br />
-          >>>&emsp;for link in cool_links:<br />
-          >>>&emsp;&emsp;print(link.name, link.info)</p>
+        <div class="sidebar">
+          <h1 id="sidebar_title">Archive</h1>
+          {% for page in blog.archive %}
+            <p><a href="/blog/{{ page[0] }}">{{ page[1] }}</a>
+          {% endfor %}
+          <!-- <a href="http://philhteoma.duckdns.org/rss.xml">
+            <img src="rss.gif"></img>
+          </a> -->
         </div>
-        <div class="main_page_div">
-          <ul id="links">
-            <li><h2><a href="https://www.givingwhatwecan.org">Giving What We Can</a></h2></li>
-              <p>A movement which encourages people to donate a percentage of their income to highly effective charities.
-                I have pledged 10% of my future income, and look to raise that as my income grows.
-            <li><h2><a href="http://gleech.org">GavBlog</a></h2></li>
-              <p>My good friend Gavin muses on computer science, ethics and whimsy. Available in both simple and
-                technical styles, depending on your level of computer literacy.
+        <div class="blog_page_div">
+          <h1>{{ page.page_title }}</h1>
+          {{ page.page_text }}
+          <div style="clear:both">
+            {% if page.page_index != blog.max_index %}
+              <h4 style="float: left"><a href="/blog/{{ page.formal_name }}--older">&#60;&#60;&#60;Older</a></h4>
+            {% endif %}
+            {% if page.page_index != 0 %}
+             <h4 style="float: right"><a href="/blog/{{ page.formal_name }}--newer">Newer&#62;&#62;&#62;</a></h4>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

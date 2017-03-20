@@ -6,7 +6,7 @@
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main/style.css') }}" />
 </head>
 
 <body>
@@ -22,9 +22,9 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href="/">Home</a></li>
+          <li class="selected"><a href="/">Home</a></li>
           <li><a href="/projects">Projects</a></li>
-          <li class="selected"><a href="/blog">Blog</a></li>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="/links">Cool Things</a></li>
           <li><a href="/about">About</a></li>
         </ul>
@@ -33,26 +33,26 @@
     <div id="content_header"></div>
     <div id="site_content">
       <div id="content">
-        <div class="sidebar">
-          <h1 id="sidebar_title">Archive</h1>
-          {% for page in blog.archive %}
-            <p><a href="/blog/{{ page[0] }}">{{ page[1] }}</a>
-          {% endfor %}
-          <!-- <a href="http://philhteoma.duckdns.org/rss.xml">
-            <img src="rss.gif"></img>
-          </a> -->
+        <div class="code_snippet">
+        <!-- insert the page content here -->
+          <p class="code_text">
+          >>>&emsp;class Phil(Person):<br />
+          >>>&emsp;&emsp;def __init__(self):<br />
+          >>>&emsp;&emsp;&emsp;self.name = "Phil"<br />
+          >>>&emsp;&emsp;&emsp;self.age = 26<br />
+          >>>&emsp;&emsp;&emsp;self.repo = "http://phlihteoma.duckdns.org"<br />
+          >>>&emsp;<br />
+          >>>&emsp;me = Phil()<br />
+          >>>&emsp;print(me.bio())</p>
         </div>
-        <div class="blog_page_div">
-          <h1>{{ page.page_title }}</h1>
-          {{ page.page_text }}
-          <div style="clear:both">
-            {% if page.page_index != blog.max_index %}
-              <h4 style="float: left"><a href="/blog/{{ page.formal_name }}--older">&#60;&#60;&#60;Older</a></h4>
-            {% endif %}
-            {% if page.page_index != 0 %}
-             <h4 style="float: right"><a href="/blog/{{ page.formal_name }}--newer">Newer&#62;&#62;&#62;</a></h4>
-            {% endif %}
-          </div>
+        <div class="main_page_div">
+        <h1 class="centered_header">MY NAME IS PHIL</h1>
+        <p>I am a Python and web developer in Glasgow, Scotland.
+        <p>I am part of the small collective Teoma, a group dedicated to self-improvement through the acquisition of knowledge
+          and skills. I taught myself Python, and am now studying for a degree in computing and IT.
+        <p>I enjoy running, board games, reading, and trying to be clever. My degree of success in these pursuits tends
+          to vary wildly.
+        <p>While I am not quite as passionate about mentally obscene tech demos as my compatriots, I do appreciate them.
         </div>
       </div>
     </div>

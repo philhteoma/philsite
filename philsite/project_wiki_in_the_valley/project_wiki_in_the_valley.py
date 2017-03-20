@@ -5,7 +5,7 @@ wiki_in_use = False
 
 @app.route("/wiki_in_the_valley_o")
 def wiki_in_the_valley_o():
-    return render_template("template_in_the_valley_o.html")
+    return render_template("project_wiki_in_the_valley/template_in_the_valley_o.html")
 
 @app.route("/wiki_in_the_valley_o/get_song", methods=["POST"])
 def get_song():
@@ -32,7 +32,7 @@ def get_song():
 
 @app.route("/wiki_in_the_valley_o/about")
 def about_wiki():
-    return render_template("about_wiki.html")
+    return render_template("project_wiki_in_the_valley/about_wiki.html")
 
 def list_to_string(the_list):
     string = ""

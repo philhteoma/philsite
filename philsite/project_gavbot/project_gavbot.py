@@ -12,9 +12,9 @@ def gavbot_index():
         gavbot_log_addr(request.remote_addr)
     if 'username' in session:
         print(current_bots[session['username']].current_page)
-        return render_template("gavbot_index.html", gavbot=current_bots[session['username']])
+        return render_template("project_gavbot/gavbot_index.html", gavbot=current_bots[session['username']])
     else:
-        return render_template("gavbot_index_null.html")
+        return render_template("project_gavbot/gavbot_index_null.html")
 
 @app.route(path+"/login", methods=["GET", "POST"])
 def gavbot_login():

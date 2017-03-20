@@ -7,7 +7,7 @@ path = "/noble_hq"
 @app.route(path)
 def noblehq():
     name_list = NobleManager.id_lookup
-    return render_template("noblehq_template.html", name_list = name_list)
+    return render_template("project_noble_hq/noblehq_template.html", name_list = name_list)
 
 @app.route(path+"/noblepost", methods=["GET", "POST"])
 def noblepost():

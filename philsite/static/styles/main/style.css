@@ -70,7 +70,7 @@ ol li
   margin-right: auto;}
 
 #header
-{ background: url(back.png) repeat-x;}
+{ background: url(page_graphics/back.png) repeat-x;}
 
 #logo
 { width: 1000px;
@@ -160,10 +160,10 @@ ul#menu li.selected a
 
 ul#menu li.selected
 { margin: 7px 0 0 0;
-  background: #635B53 url(tabs.png) no-repeat 0 0px;}
+  background: #635B53 url(page_graphics/tabs.png) no-repeat 0 0px;}
 
 ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #635B53 url(tabs.png) no-repeat 100% 0px;
+{ background: #635B53 url(page_graphics/tabs.png) no-repeat 100% 0px;
   color: #FFF;}
 
 ul#menu li a:hover

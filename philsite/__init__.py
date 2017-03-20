@@ -27,15 +27,15 @@ blog_object = blog_manager.Blog()
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("main/index.html")
 
 @app.route("/projects")
 def projects():
-    return render_template("projects.html")
+    return render_template("main/projects.html")
 
 @app.route("/links")
 def links():
-    return render_template("links.html")
+    return render_template("main/links.html")
 
 @app.route("/about")
 def about():
@@ -51,7 +51,7 @@ def about():
     with open("philsite/blog/posts/xml_test.xml", "r") as file:
         e = file.read()
     print(e)
-    return render_template("about.html", xml_file=e)
+    return render_template("main/about.html", xml_file=e)
 
 #
 #-----Blog-----
@@ -60,7 +60,7 @@ def about():
 @app.route("/blog")
 def blog():
     page_object = blog_object.load_page()
-    return render_template("blog.html", blog=blog_object, page=page_object)
+    return render_template("main/blog.html", blog=blog_object, page=page_object)
 
 @app.route('/blog/', defaults={'path': ''})
 @app.route('/blog/<path:path>')
@@ -70,7 +70,7 @@ def blog_request(path):
     if page_object.request:
         return redirect("/blog/{}".format(page_object.formal_name))
     else:
-        return render_template("blog.html", blog=blog_object, page=page_object)
+        return render_template("main/blog.html", blog=blog_object, page=page_object)
 
 @app.route("/rss.xml")
 def rss():

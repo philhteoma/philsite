@@ -101,7 +101,7 @@ ol li
   margin-right: auto;}
 
 #header
-{ background: #323534 url(gavbot_back.png) repeat-x;
+{ background: #323534 url(page_graphics/back.png) repeat-x;
   height: 100px;}
 
 #logo
@@ -161,7 +161,7 @@ ul#menu li
   padding: 0 0 0 9px;
   list-style: none;
   margin: 1px 2px 0 0;
-  background: #5A5A5A url(gavbot_tab.png) no-repeat 0 0;}
+  background: #5A5A5A url(page_graphics/tab.png) no-repeat 0 0;}
 
 ul#menu li a
 { font: normal 100% 'trebuchet ms', sans-serif;
@@ -172,7 +172,7 @@ ul#menu li a
   text-align: center;
   color: #FFF;
   text-decoration: none;
-  background: #5A5A5A url(gavbot_tab.png) no-repeat 100% 0;}
+  background: #5A5A5A url(page_graphics/tab.png) no-repeat 100% 0;}
 
 ul#menu li.selected a
 { height: 20px;
@@ -180,10 +180,10 @@ ul#menu li.selected a
 
 ul#menu li.selected
 { margin: 1px 2px 0 0;
-  background: #00C6F0 url(gavbot_tab_selected.png) no-repeat 0 0;}
+  background: #00C6F0 url(page_graphics/tab_selected.png) no-repeat 0 0;}
 
 ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #00C6F0 url(gavbot_tab_selected.png) no-repeat 100% 0;
+{ background: #00C6F0 url(page_graphics/tab_selected.png) no-repeat 100% 0;
   color: #FFF;}
 
 ul#menu li a:hover
@@ -203,12 +203,12 @@ ul#menu li a:hover
 .sidebar_top
 { width: 222px;
   height: 14px;
-  background: transparent url(gavbot_side_top.png) no-repeat;}
+  background: transparent url(page_graphics/side_top.png) no-repeat;}
 
 .sidebar_base
 { width: 222px;
   height: 14px;
-  background: url(gavbot_side_base.png) no-repeat;}
+  background: url(page_graphics/side_base.png) no-repeat;}
 
 .sidebar
 { float: right;
@@ -218,7 +218,7 @@ ul#menu li a:hover
   margin: 0 0 16px 0;}
 
 .sidebar_item
-{ background: url(gavbot_side_back.png) repeat-y;
+{ background: url(page_graphics/side_back.png) repeat-y;
   padding: 0 15px;
   width: 192px;
   min-height: 400px;}
@@ -240,7 +240,7 @@ ul#menu li a:hover
 
 #content ul li, .sidebar ul li
 { list-style-type: none;
-  background: url(gavbot_bullet.png) no-repeat;
+  background: url(page_graphics/bullet.png) no-repeat;
   margin: 0 0 0 0;
   padding: 0 0 4px 25px;
   line-height: 1.5em;}
@@ -252,7 +252,7 @@ ul#menu li a:hover
   height: 80px;
   padding: 28px 0 5px 0;
   text-align: center;
-  background: #3B3939 url(gavbot_footer.png) repeat-x;
+  background: #3B3939 url(page_graphics/footer.png) repeat-x;
   color: #A8AA94;}
 
 #footer p
