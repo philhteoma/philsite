@@ -1,6 +1,8 @@
 from philsite import app, render_template, os, sys, json, request, send_from_directory
 import philsite.project_noble_hq.nobles_management as nobles_management
 
+#hello i am a comment
+
 NobleManager = nobles_management.NobleManager("philsite/project_noble_hq/nobles_dictionary.json", "philsite/project_noble_hq/noblenames.json")
 path = "/noble_hq"
 
