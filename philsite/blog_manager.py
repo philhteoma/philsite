@@ -1,8 +1,9 @@
 import re
 
 class Blog:
-    def __init__(self):
-        with open("philsite/blog/archive/archive.txt", "r") as file:
+    def __init__(self, app_dir):
+        self.app_dir = app_dir
+        with open(app_dir+"/blog/archive/archive.txt", "r") as file:
             raw_archive = file.readlines()
         self.archive = [tuple(re.split("\|", x[:-1])) for x in raw_archive]
         self.archive.sort(key=lambda x: int(re.sub("/", "", x[1])))
@@ -30,15 +31,16 @@ class Blog:
         else:
             new_page_index = 0
             request = False
-        page_object = BlogPage(self.archive[new_page_index], new_page_index, request)
+        page_object = BlogPage(self.archive[new_page_index], new_page_index, self.app_dir, request)
         return page_object
 
 class BlogPage:
-    def __init__(self, page_info, new_page_index, request=False):
+    def __init__(self, page_info, new_page_index, app_dir, request=False):
         self.page_index = new_page_index
         self.formal_name = re.sub(" ", "_", page_info[0])
         self.page_name = page_info[1]
         self.page_date = page_info[2]
+        self.app_dir = app_dir
         self.request = request
         if request:
             pass
@@ -47,7 +49,7 @@ class BlogPage:
 
 
     def format_page(self):
-        with open("philsite/blog/posts/" + self.formal_name + ".txt", "r") as file:
+        with open(self.app_dir+"/blog/posts/" + self.formal_name + ".txt", "r") as file:
             self.raw_text = file.read()
         split = re.split("<title>", self.raw_text)
         self.page_title = split[1]

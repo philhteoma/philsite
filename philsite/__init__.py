@@ -11,6 +11,8 @@ import socket
 
 app = Flask(__name__, template_folder="")
 
+app_dir = os.path.dirname(os.path.realpath(__file__))
+
 import philsite.blog_manager
 import philsite.project_gavbot.project_gavbot
 import philsite.project_noble_hq.project_noble_hq
@@ -19,12 +21,24 @@ import philsite.project_wiki_in_the_valley.project_wiki_in_the_valley
 app.jinja_env.autoescape = False
 host_name = socket.gethostname()
 app.secret_key = os.urandom(32)
-blog_object = blog_manager.Blog()
+blog_object = blog_manager.Blog(app_dir)
 
-app_dir = os.getcwd()
+
+print(app_dir)
 
 dir_name = "main/"
-static_dir = app_dir + "/philsite/main/static"
+static_dir = app_dir + "/main/static"
+
+#
+#-----Object for app directory-----
+#
+
+class AppDir:
+    def __init__(self, dir_name):
+        self.dir_name = dir_name
+
+directory = AppDir(app_dir)
+
 
 #
 #-----Custom Static Code-----
