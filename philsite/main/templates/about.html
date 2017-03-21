@@ -6,7 +6,8 @@
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main/style.css') }}" />
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='philsite/main/stat/styles/style.css') }}'" /> -->
+  <link rel="stylesheet" type="text/css" href="/main_static/styles/style.css" />
 </head>
 
 <body>
@@ -24,9 +25,9 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="/">Home</a></li>
           <li><a href="/projects">Projects</a></li>
-          <li class="selected"><a href="/blog">Blog</a></li>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="/links">Cool Things</a></li>
-          <li><a href="/about">About</a></li>
+          <li class="selected"><a href="/about">About</a></li>
         </ul>
       </div>
     </div>
@@ -34,29 +35,14 @@
     <div id="site_content">
       <div id="content">
         <div class="sidebar">
-          <h1 id="sidebar_title">Archive</h1>
-          {% for page in blog.archive %}
-            <p><a href="/blog/{{ page[0] }}">{{ page[1] }}</a>
-          {% endfor %}
-          <!-- <a href="http://philhteoma.duckdns.org/rss.xml">
-            <img src="rss.gif"></img>
-          </a> -->
+          <h1 id="sidebar_title"></h1>
         </div>
         <div class="blog_page_div">
-          <h1>{{ page.page_title }}</h1>
-          {{ page.page_text }}
-          <div style="clear:both">
-            {% if page.page_index != blog.max_index %}
-              <h4 style="float: left"><a href="/blog/{{ page.formal_name }}--older">&#60;&#60;&#60;Older</a></h4>
-            {% endif %}
-            {% if page.page_index != 0 %}
-             <h4 style="float: right"><a href="/blog/{{ page.formal_name }}--newer">Newer&#62;&#62;&#62;</a></h4>
-            {% endif %}
-          </div>
         </div>
       </div>
     </div>
-    <div id="content_footer"></div>
+  </div>
+  <div id="content_footer"></div>
     <div id="footer">
       <p>Copyright &copy; shadowplay_2 | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
     </div>

@@ -1,11 +1,20 @@
-from philsite import app, render_template, request, json
+from philsite import app, render_template, request, json, send_from_directory
 import philsite.project_wiki_in_the_valley.valley_generator as valley_generator
+import os
 
 wiki_in_use = False
 
+dir_name ="project_wiki_in_the_valley/"
+app_dir = os.getcwd()
+static_dir = app_dir + "/philsite/project_wiki_in_the_valley/static"
+
+@app.route("/wiki_static/<path:filename>")
+def wiki_static(filename):
+    return send_from_directory(static_dir, filename)
+
 @app.route("/wiki_in_the_valley_o")
 def wiki_in_the_valley_o():
-    return render_template("project_wiki_in_the_valley/template_in_the_valley_o.html")
+    return render_template(dir_name+"templates/template_in_the_valley_o.html")
 
 @app.route("/wiki_in_the_valley_o/get_song", methods=["POST"])
 def get_song():
@@ -32,7 +41,7 @@ def get_song():
 
 @app.route("/wiki_in_the_valley_o/about")
 def about_wiki():
-    return render_template("project_wiki_in_the_valley/about_wiki.html")
+    return render_template(dir_name+"templates/about_wiki.html")
 
 def list_to_string(the_list):
     string = ""

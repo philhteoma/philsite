@@ -48,8 +48,8 @@ class Gavbot:
             self.current_page = "intro"
             self.manual_update_page()
             self.save_gav()
-        self.pic = "/static/images/project_gavbot/gavbot.jpg"
-        self.health_pic = "/static/images/project_gavbot/heart.jpg"
+        self.pic = "/gavbot_static/images/gavbot.jpg"
+        self.health_pic = "/gavbot_static/images/heart.jpg"
         self.item_lists = {
             "meta": self.meta,
             "trait": self.traits,

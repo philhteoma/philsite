@@ -1,9 +1,20 @@
-from philsite import app, request, session, render_template, redirect
+from philsite import app, request, session, render_template, redirect, send_from_directory
 import philsite.project_gavbot.gavbot_page_manager as gavbot_page_manager
+import os
 
 current_bots = {}
 logged_sessions = []
 path = "/gavbot"
+
+
+
+dir_name="project_gavbot/"
+app_dir = os.getcwd()
+static_dir = app_dir + "/philsite/project_gavbot/static"
+
+@app.route("/gavbot_static/<path:filename>")
+def gavbot_static(filename):
+    return send_from_directory(static_dir, filename)
 
 @app.route(path)
 def gavbot_index():
@@ -12,9 +23,9 @@ def gavbot_index():
         gavbot_log_addr(request.remote_addr)
     if 'username' in session:
         print(current_bots[session['username']].current_page)
-        return render_template("project_gavbot/gavbot_index.html", gavbot=current_bots[session['username']])
+        return render_template(dir_name+"templates/gavbot_index.html", gavbot=current_bots[session['username']])
     else:
-        return render_template("project_gavbot/gavbot_index_null.html")
+        return render_template(dir_name+"templates/gavbot_index_null.html")
 
 @app.route(path+"/login", methods=["GET", "POST"])
 def gavbot_login():

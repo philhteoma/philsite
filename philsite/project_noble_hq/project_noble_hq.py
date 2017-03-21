@@ -1,13 +1,21 @@
-from philsite import app, render_template, os, sys, json, request
+from philsite import app, render_template, os, sys, json, request, send_from_directory
 import philsite.project_noble_hq.nobles_management as nobles_management
 
 NobleManager = nobles_management.NobleManager("philsite/project_noble_hq/nobles_dictionary.json", "philsite/project_noble_hq/noblenames.json")
 path = "/noble_hq"
 
+dir_name = "project_noble_hq/"
+app_dir = os.getcwd()
+static_dir = app_dir + "/philsite/project_noble_hq/static"
+
+@app.route("/noble_hq_static/<path:filename>")
+def noble_hq_static(filename):
+    return send_from_directory(static_dir, filename)
+
 @app.route(path)
 def noblehq():
     name_list = NobleManager.id_lookup
-    return render_template("project_noble_hq/noblehq_template.html", name_list = name_list)
+    return render_template(dir_name+"templates/noblehq_template.html", name_list = name_list)
 
 @app.route(path+"/noblepost", methods=["GET", "POST"])
 def noblepost():

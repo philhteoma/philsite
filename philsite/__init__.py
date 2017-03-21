@@ -1,5 +1,5 @@
 import sys
-from flask import Flask, render_template, request, make_response, redirect, session
+from flask import Flask, render_template, request, make_response, redirect, session, send_from_directory
 import requests
 import re
 import jinja2
@@ -9,7 +9,7 @@ import socket
 
 #import xml.etree.ElementTree
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="")
 
 import philsite.blog_manager
 import philsite.project_gavbot.project_gavbot
@@ -21,37 +21,39 @@ host_name = socket.gethostname()
 app.secret_key = os.urandom(32)
 blog_object = blog_manager.Blog()
 
+app_dir = os.getcwd()
+
+dir_name = "main/"
+static_dir = app_dir + "/philsite/main/static"
+
+#
+#-----Custom Static Code-----
+#
+
+@app.route("/main_static/<path:filename>")
+def main_static(filename):
+    return send_from_directory(static_dir, filename)
+
+
 #
 #-----Main Pages-----
 #
 
 @app.route("/")
 def index():
-    return render_template("main/index.html")
+    return render_template(dir_name+"templates/index.html", dir_name=dir_name, main_static=main_static)
 
 @app.route("/projects")
 def projects():
-    return render_template("main/projects.html")
+    return render_template(dir_name+"templates/projects.html", dir_name=dir_name, main_static=main_static)
 
 @app.route("/links")
 def links():
-    return render_template("main/links.html")
+    return render_template(dir_name+"templates/links.html", dir_name=dir_name, main_static=main_static)
 
 @app.route("/about")
 def about():
-    # print("!!!")
-    # e = xml.etree.ElementTree.parse("philsite/blog/posts/xml_test.xml").getroot()
-    # for i in e:
-    #     print(i)
-    #     for n in i:
-    #         print(n)
-    #     print("")
-    # print(dir(e))
-    # print(e.items())
-    with open("philsite/blog/posts/xml_test.xml", "r") as file:
-        e = file.read()
-    print(e)
-    return render_template("main/about.html", xml_file=e)
+    return render_template(dir_name+"templates/about.html", dir_name=dir_name, main_static=main_static)
 
 #
 #-----Blog-----
@@ -60,7 +62,7 @@ def about():
 @app.route("/blog")
 def blog():
     page_object = blog_object.load_page()
-    return render_template("main/blog.html", blog=blog_object, page=page_object)
+    return render_template(dir_name+"templates/blog.html", blog=blog_object, page=page_object, dir_name=dir_name, main_static=main_static)
 
 @app.route('/blog/', defaults={'path': ''})
 @app.route('/blog/<path:path>')
@@ -70,7 +72,7 @@ def blog_request(path):
     if page_object.request:
         return redirect("/blog/{}".format(page_object.formal_name))
     else:
-        return render_template("main/blog.html", blog=blog_object, page=page_object)
+        return render_template(dir_name+"templates/blog.html", blog=blog_object, page=page_object, dir_name=dir_name, main_static=main_static)
 
 @app.route("/rss.xml")
 def rss():

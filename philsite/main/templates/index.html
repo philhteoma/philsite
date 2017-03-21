@@ -6,7 +6,8 @@
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main/style.css') }}" />
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main/style.css') }}" /> -->
+  <link rel="stylesheet" type="text/css" href="/main_static/styles/style.css" />
 </head>
 
 <body>
@@ -22,10 +23,10 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href="/">Home</a></li>
+          <li class="selected"><a href="/">Home</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/blog">Blog</a></li>
-          <li class="selected"><a href="/links">Cool Things</a></li>
+          <li><a href="/links">Cool Things</a></li>
           <li><a href="/about">About</a></li>
         </ul>
       </div>
@@ -36,22 +37,23 @@
         <div class="code_snippet">
         <!-- insert the page content here -->
           <p class="code_text">
-          >>>&emsp;import Internet<br />
+          >>>&emsp;class Phil(Person):<br />
+          >>>&emsp;&emsp;def __init__(self):<br />
+          >>>&emsp;&emsp;&emsp;self.name = "Phil"<br />
+          >>>&emsp;&emsp;&emsp;self.age = 26<br />
+          >>>&emsp;&emsp;&emsp;self.repo = "http://phlihteoma.duckdns.org"<br />
           >>>&emsp;<br />
-          >>>&emsp;links = Internet.links<br />
-          >>>&emsp;cool_links = [x for x in links if x.temp == "cool"]<br />
-          >>>&emsp;<br />
-          >>>&emsp;for link in cool_links:<br />
-          >>>&emsp;&emsp;print(link.name, link.info)</p>
+          >>>&emsp;me = Phil()<br />
+          >>>&emsp;print(me.bio())</p>
         </div>
         <div class="main_page_div">
-          <ul id="links">
-            <li><h2><a href="https://www.givingwhatwecan.org">Giving What We Can</a></h2></li>
-              <p>A movement which encourages people to donate a percentage of their income to highly effective charities.
-                I have pledged 10% of my future income, and look to raise that as my income grows.
-            <li><h2><a href="http://gleech.org">GavBlog</a></h2></li>
-              <p>My good friend Gavin muses on computer science, ethics and whimsy. Available in both simple and
-                technical styles, depending on your level of computer literacy.
+        <h1 class="centered_header">MY NAME IS PHIL</h1>
+        <p>I am a Python and web developer in Glasgow, Scotland.
+        <p>I am part of the small collective Teoma, a group dedicated to self-improvement through the acquisition of knowledge
+          and skills. I taught myself Python, and am now studying for a degree in computing and IT.
+        <p>I enjoy running, board games, reading, and trying to be clever. My degree of success in these pursuits tends
+          to vary wildly.
+        <p>While I am not quite as passionate about mentally obscene tech demos as my compatriots, I do appreciate them.
         </div>
       </div>
     </div>
