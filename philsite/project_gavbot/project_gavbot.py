@@ -6,8 +6,6 @@ current_bots = {}
 logged_sessions = []
 path = "/gavbot"
 
-
-
 dir_name="project_gavbot/"
 app_dir = os.getcwd()
 static_dir = app_dir + "/philsite/project_gavbot/static"
@@ -48,7 +46,7 @@ def gavbot_reset():
 @app.route(path+"/page/<path:path>")
 def gavbot_move_page(path):
     if 'username' in session:
-        current_bots[session['username']].update_page(path)
+        current_bots[session['username']].user_update_page(path)
         return redirect("/gavbot")
     else:
         return redirect("/gavbot")

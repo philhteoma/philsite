@@ -65,13 +65,15 @@
         <!-- insert the page content here -->
         <h2 align="center">{{ gavbot.page_title }}</h2>
         {{ gavbot.page_text }}
-        {% for choice in gavbot.page_choices %}
-          {% if choice[0] %}
-            <form action={{ "/gavbot/page/" + choice[1] }}>
-              <input class="button" type="submit" value="{{ choice[0] }}">
-            </form>
-          {% endif %}
-        {% endfor %}
+        {% if gavbot.page_choices %}
+          {% for choice in gavbot.page_choices %}
+            {% if choice[3] %}
+              <form action={{ "/gavbot/page/" + choice[1] }}>
+                <input class="button" type="submit" value="{{ choice[0] }}">
+              </form>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
         <p>
       </div>
     </div>
