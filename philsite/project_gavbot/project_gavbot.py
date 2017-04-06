@@ -1,14 +1,18 @@
-from philsite import app, request, session, render_template, redirect, send_from_directory
+from philsite import philsite, app, request, session, render_template, redirect, send_from_directory
 import philsite.project_gavbot.gavbot_page_manager as gavbot_page_manager
 import os
+
+app_dir = philsite.app_dir
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+print("noble", app_dir)
 
 current_bots = {}
 logged_sessions = []
 path = "/gavbot"
 
 dir_name="project_gavbot/"
-app_dir = os.getcwd()
-static_dir = app_dir + "/philsite/project_gavbot/static"
+static_dir = app_dir + "/project_gavbot/static"
 
 @app.route("/gavbot_static/<path:filename>")
 def gavbot_static(filename):
@@ -29,8 +33,8 @@ def gavbot_index():
 def gavbot_login():
     if request.method == "POST":
         session["username"] = request.form["username"]
-        current_bots[session["username"]] = gavbot_page_manager.Gavbot(session["username"])
-        return redirect(path)
+        current_bots[session["username"]] = gavbot_page_manager.Gavbot(session["username"], path=script_dir+"/")
+        return redirect("/gavbot")
 
 @app.route(path+"/logout")
 def gavbot_logout():
@@ -52,5 +56,5 @@ def gavbot_move_page(path):
         return redirect("/gavbot")
 
 def gavbot_log_addr(ip):
-    with open("philsite/log/log.txt", "a") as file:
+    with open(app_dir+"/log/log.txt", "a") as file:
         file.write(ip + "\n")

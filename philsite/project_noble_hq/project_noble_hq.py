@@ -1,12 +1,14 @@
-from philsite import app, render_template, os, sys, json, request, send_from_directory
+from philsite import philsite, app, render_template, os, sys, json, request, send_from_directory
 import philsite.project_noble_hq.nobles_management as nobles_management
 
-NobleManager = nobles_management.NobleManager("philsite/project_noble_hq/nobles_dictionary.json", "philsite/project_noble_hq/noblenames.json")
+dir_name = "project_noble_hq/"
+app_dir = philsite.app_dir
+static_dir = app_dir + "/project_noble_hq/static"
 path = "/noble_hq"
 
-dir_name = "project_noble_hq/"
-app_dir = os.getcwd()
-static_dir = app_dir + "/philsite/project_noble_hq/static"
+
+NobleManager = nobles_management.NobleManager(app_dir+"/project_noble_hq/nobles_dictionary.json", app_dir+"/project_noble_hq/noblenames.json")
+
 
 @app.route("/noble_hq_static/<path:filename>")
 def noble_hq_static(filename):
