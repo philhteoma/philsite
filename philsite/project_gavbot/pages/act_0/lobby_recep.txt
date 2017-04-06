@@ -4,6 +4,7 @@
 "You Dave? We're expecting a Dave at some point today"<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Yeah, sure, I'm Dave<page>lobby_recep_dave<req>
 <choice>I'm, err, new?<page>lobby_recep_notdave<req>
 <choice>[LIE]My hovercraft is full of eels<page>lobby_recep_hover<req>

@@ -6,5 +6,6 @@ There are some electrodes running from the goat to a dial mounted on the wall, w
 The dial is currently most of the way towards the "happy" end.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Stare back<page>lobby_doors_goat_2<req>
 <choice>Close the door<page>lobby_doors<req>

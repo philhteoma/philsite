@@ -5,5 +5,6 @@ You begin yanking the boards off the door. Nails clink off the floor as they are
 is the stench off death about this place.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Open the door <i>(Seriously?!)</i><page>maze_floor_one_door_3<req>
 <choice>Come to your senses<page>maze_floor_one<req>

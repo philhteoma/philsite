@@ -17,6 +17,7 @@ Standing here now, beneath the latin, you pause to consider your feelings. What 
 How are you feeling right now?<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>CONFIDENT<page>outside_2<req>
 <choice>SCARED<page>outside_2<req>
 <choice>AROUSED<page>outside_2<req>

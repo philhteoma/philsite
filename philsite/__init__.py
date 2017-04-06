@@ -15,6 +15,7 @@ import philsite.blog_manager
 import philsite.project_gavbot.project_gavbot
 import philsite.project_noble_hq.project_noble_hq
 import philsite.project_wiki_in_the_valley.project_wiki_in_the_valley
+import philsite.project_neural.project_neural
 
 app.jinja_env.autoescape = False
 host_name = socket.gethostname()

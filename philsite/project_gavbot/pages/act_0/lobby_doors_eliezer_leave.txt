@@ -2,4 +2,5 @@
 <text>As you step back, the feelings of guilt and shame wash away. You aren't ready for this. Not yet.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Reassess your earlier descisions<page>lobby_entrance<req>

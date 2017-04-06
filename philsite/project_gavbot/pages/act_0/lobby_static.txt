@@ -7,5 +7,6 @@ The receptionist eventually looks up and notices you. There's a few seconds of e
 This probably isn't going to achieve much.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Approach the receptionist<page>lobby_recep<req>
 <choice>Pick a door, any door<page>lobby_doors<req>

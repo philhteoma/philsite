@@ -8,5 +8,6 @@ The dial moves slowly towards "HAPPY".
 The goat chews.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>YOU CAN DO IT YOU CAN DO IT YOU CAN DO IT YOU CAN DO IT<page>lobby_doors_goat_7<req>
 <choice>enough<page>lobby_doors_goat_leave<req>

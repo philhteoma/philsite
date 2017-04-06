@@ -2,4 +2,5 @@
 <text>Welcome to redirect test!<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice><page><req>

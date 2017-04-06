@@ -6,4 +6,5 @@
  Then, all of a sudden, you find yourself alone again. It would appear that everyone made it inside. Suddenly, the doors begin to close!<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Quickly, inside!<page>lobby_entrance<req>

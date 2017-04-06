@@ -5,4 +5,5 @@ Behind the door lies a very long corridor. So, logn in fact, that you can't even
 into darknses. You also cannot see any doors or windows. There is the occasional potted plant.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Step Forward<page>maze_floor_one_door_5<req>

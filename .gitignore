@@ -5,4 +5,6 @@
 !philsite/project_gavbot/saved_gavbots/.gitkeep
 /philsite/project_gavbot/log/*
 /philsite.egg-info/*
+/philsite/project_neural/static/diagrams/*
+!/philsite/project_neural/static/diagrams/.gitkeep
 run_app.sh

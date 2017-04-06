@@ -10,4 +10,5 @@ Suffice to say:
 <h1>GAME OVER</h1><text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice><page><req>

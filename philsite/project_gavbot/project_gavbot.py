@@ -30,7 +30,7 @@ def gavbot_login():
     if request.method == "POST":
         session["username"] = request.form["username"]
         current_bots[session["username"]] = gavbot_page_manager.Gavbot(session["username"])
-        return redirect("/gavbot")
+        return redirect(path)
 
 @app.route(path+"/logout")
 def gavbot_logout():

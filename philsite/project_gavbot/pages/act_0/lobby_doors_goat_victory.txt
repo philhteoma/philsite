@@ -2,4 +2,5 @@
 <text>Congratulations!<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Return to the lobby<page>lobby_entrance<req>

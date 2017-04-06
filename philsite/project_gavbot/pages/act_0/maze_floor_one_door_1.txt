@@ -5,5 +5,6 @@ You approach the door. You can hear whipsers coming from behind it. A chill runs
 spooky feelings crowd your thoughts. <text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Start prying off the board<page>maze_floor_one_door_2<req>
 <choice>Wisely step back<page>mage_floor_one<req>

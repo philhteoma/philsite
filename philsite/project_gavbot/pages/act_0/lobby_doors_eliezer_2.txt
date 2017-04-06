@@ -11,4 +11,5 @@ make. Next to each desk is a wastepaper basket, filled with crumpled, torn up sh
 The door <i>clicks</i> shut behind you.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Investigate<page>lobby_doors_eliezer_3<req>

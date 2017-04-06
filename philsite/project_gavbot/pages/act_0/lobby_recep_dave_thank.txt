@@ -5,4 +5,5 @@ As you set off, he speaks again: "Hey, you'll, err, probably need this", he says
 "It'll be helpful".<text>
 <items>gain_meta_Bronze Disc<items>
 <bounce><bounce>
+<special><special>
 <choice>Be on your merry way<page>maze<req>

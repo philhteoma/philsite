@@ -4,5 +4,6 @@ you on the irrational decisions in your life. As you reach for the handle, you s
 of all the wrong choices you've made pile up. You notice that you are sweating.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Open the door<page>lobby_doors_eliezer_2<req>
 <choice>No way, Jose<page>lobby_doors_eliezer_leave<req>

@@ -3,4 +3,5 @@
 back and choose again, but do better this time.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>I recognise that I am not funny, and will cease all future attempts at humour<page>lobby_recep<req>

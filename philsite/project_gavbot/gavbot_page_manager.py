@@ -12,7 +12,8 @@ class PageManager:
             [1] Page text
             [2] Items gained or lost on accessing this page
             [3] A list of potential redirects if certain items are possessed
-            [4] A list of choices for the reader, sepertated as follows:
+            [4] A list of special actions for this scrpit to perform
+            [5] A list of choices for the reader, sepertated as follows:
                 [0] Choice text
                 [1] File name of page choice leads to
                 [2] Item requirements for choice to be displayed"""
@@ -26,6 +27,8 @@ class PageManager:
         items = split[1]
         split = re.split("<bounce>", split[2])
         bounce = split[1]
+        split = re.split("<special>", split[2])
+        special = split[1]
         choices = re.split("<choice>", split[2])
         choices.pop(0) #now we have choices serialised
         for i in range(len(choices)):
@@ -33,7 +36,7 @@ class PageManager:
             choices[i] = re.sub("<page>", "<>", choices[i])
             choices[i] = re.sub("<req>", "<>", choices[i])
             choices[i] = re.split("<>", choices[i])
-        page_data = [title, text, items, bounce, choices]
+        page_data = [title, text, items, bounce, choices, special]
         return page_data
 
     def load_page(self, gavbot):

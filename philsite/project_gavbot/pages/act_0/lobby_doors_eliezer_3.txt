@@ -28,4 +28,5 @@ Looking up, you notice that the seat next to the desk is now empty.
 The door <i>clicks</i> shut behind you.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Give chase!<page>lobby_chase<req>

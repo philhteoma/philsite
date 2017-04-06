@@ -11,6 +11,7 @@ Gavs nowadays. He's reading a copy of <i>Gavbot Monthly</i>, and apparently hasn
 What will you do?<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Approach the receptionist<page>lobby_recep<req>
 <choice>Pick a door, any door<page>lobby_doors<req>
 <choice>Stand awkwardly<page>lobby_static<req>

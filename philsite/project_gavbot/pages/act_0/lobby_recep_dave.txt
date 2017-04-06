@@ -5,5 +5,6 @@ door on the left, down a floor, then straight on until you meet the guard"
 He waves his hand, and returns to reading his magazine.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Thank him for his time<page>lobby_recep_dave_thank<req>
 <choice>Flip this bellend the bird<page>lobby_recep_dave_bird<req>

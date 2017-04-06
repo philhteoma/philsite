@@ -9,4 +9,5 @@ Seconds later, the door bursts open and you are eaten by a thousand cackling dem
 <h1>GAME OVER</h1><text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice><page><req>

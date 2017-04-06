@@ -6,5 +6,6 @@ The dial is moving rapidly towards "HAPPY"
 The goat continues to chew.<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>THIS IS IT, THE FINAL STRETCH, YOU CAN WIN THIS<page>lobby_doors_goat_6<req>
 <choice>It isn't worth it, man. Just let it go.<page>lobby_doors_goat_leave<req>

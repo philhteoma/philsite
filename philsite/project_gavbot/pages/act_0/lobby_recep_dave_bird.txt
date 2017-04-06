@@ -5,5 +5,6 @@ derserves it.
 Now, where were you going?<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>Head upstairs<page>maze_floor_one<req>
 <choice>Head downstairs<page>maze_downstairs<req>

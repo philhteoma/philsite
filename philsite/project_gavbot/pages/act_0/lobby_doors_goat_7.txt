@@ -7,4 +7,5 @@ The goat, momentarily distracted, look towards the ceiling. Then, slowly, it mov
 and begins chewing again<text>
 <items><items>
 <bounce><bounce>
+<special><special>
 <choice>You did it. Its over.<page>lobby_doors_goat_victory<req>
