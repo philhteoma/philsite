@@ -9,10 +9,10 @@ Modifications:
     -Added functionality to annotate nodes
 """
 import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
-mpl.use('Agg')
 
 # def draw_neural_net(ax, left, right, bottom, top, layer_sizes, layer_text=None):
 def draw_neural_net(ax, network, print_values=True):

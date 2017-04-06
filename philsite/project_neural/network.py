@@ -2,12 +2,12 @@ import numpy as np
 import copy
 import statistics as stat
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from PIL import Image, ImageChops
-import philsite.project_neural.draw_neural_net as printer
 #import draw_neural_net as printer
+import philsite.project_neural.draw_neural_net as printer
 
-matplotlib.use('Agg')
 
 #seed random number to make calculations consistent
 #np.random.seed(1)
