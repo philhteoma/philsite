@@ -1,5 +1,7 @@
-from philsite import app, request, session, render_template, redirect, send_from_directory
+from philsite import app, request, session, render_template, redirect, send_from_directory, make_response
 import os, time
+from functools import wraps, update_wrapper
+from datetime import datetime
 import philsite.project_neural.network as net_gen
 
 path = "/neural_net"
@@ -11,17 +13,34 @@ network = net_gen.Network([2, 1, 1, 3], threshold=0.5)
 network.export_graph()
 training_data = net_gen.TrainingData(network, [([0, 0], [0]), ([0, 1], [1]), ([1, 0], [1]), ([1, 1], [0])])
 
+#
+#-----Wrapper to disable caching on a page-----
+#
+
+def nocache(view):
+    @wraps(view)
+    def no_cache(*args, **kwargs):
+        response = make_response(view(*args, **kwargs))
+        response.headers["Cache_Control"] = "no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "-1"
+        return response
+
+    return update_wrapper(no_cache, view)
+
 @app.route("/neural_static/<path:filename>")
 def neural_static(filename):
     return send_from_directory(static_dir, filename)
 
 @app.route(path)
+@nocache
 def neural_index():
     return render_template(dir_name+"templates/neural_net.html", network=network, training_data=training_data)
 
 
 @app.route(path+"/new_net", methods=["GET", "POST"])
 def generate_new_net():
+    global network
     if request.method == "POST":
         print(request.form)
         data = request.form
