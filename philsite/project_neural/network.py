@@ -1,5 +1,7 @@
 import numpy as np
 import copy
+import random
+import os
 import statistics as stat
 import matplotlib
 matplotlib.use('Agg')
@@ -76,6 +78,7 @@ class Network:
         self.initialise_synapses()
         self.synapses = [[y.input_synapses for y in x] for x in self.neurons]
         self.initialise_bias(bias_node)
+        self.img_name = None
         if random_weights: self.randomise_synapse_weights()
 
     def propagate(self, data):
@@ -206,10 +209,15 @@ class Network:
         fig.set_size_inches(10, 10)
         fig.gca().xaxis.set_major_locator(plt.NullLocator())
         fig.gca().yaxis.set_major_locator(plt.NullLocator())
-        plt.savefig("philsite/project_neural/static/diagrams/plot.png", bbox_inches="tight", pad_inches=0)
-        im = Image.open("philsite/project_neural/static/diagrams/plot.png")
+
+        if self.img_name:
+            os.remove("philsite/project_neural/static/diagrams/"+self.img_name)
+        self.img_name="plot" + str(random.randint(1, 100000)) + ".png"
+
+        plt.savefig("philsite/project_neural/static/diagrams/" + self.img_name, bbox_inches="tight", pad_inches=0)
+        im = Image.open("philsite/project_neural/static/diagrams/" + self.img_name)
         im = self.trim(im)
-        im.save("philsite/project_neural/static/diagrams/plot.png")
+        im.save("philsite/project_neural/static/diagrams/" + self.img_name)
 
     def trim(self, im):
         bg = Image.new(im.mode, im.size, im.getpixel((0,0)))
