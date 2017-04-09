@@ -1,0 +1,3 @@
+[submodule "philsite/project_gavbot"]
+	path = philsite/project_gavbot
+	url = https://github.com/philhteoma/project_gavbot
