@@ -41,8 +41,6 @@ class AppDir:
 directory = AppDir(app_dir)
 
 
-
-
 #
 #-----Custom Static Code-----
 #
