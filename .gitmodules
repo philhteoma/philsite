@@ -1,3 +1,9 @@
 [submodule "philsite/project_gavbot"]
 	path = philsite/project_gavbot
 	url = https://github.com/philhteoma/project_gavbot
+[submodule "project_neural"]
+	path = project_neural
+	url = https://github.com/philhteoma/project_neural
+[submodule "philsite/project_neural"]
+	path = philsite/project_neural
+	url = https://github.com/philhteoma/project_neural
