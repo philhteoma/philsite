@@ -66,11 +66,15 @@ def projects():
 def links():
     return render_template(dir_name+"templates/links.html", dir_name=dir_name, main_static=main_static)
 
-@app.route("/about")
-def about():
-    return render_template(dir_name+"templates/about.html", dir_name=dir_name, main_static=main_static)
-
 #
+#-----About page to be added later-----
+#
+
+# @app.route("/about")
+# def about():
+#     return render_template(dir_name+"templates/about.html", dir_name=dir_name, main_static=main_static)
+
+
 #-----Blog-----
 #
 
