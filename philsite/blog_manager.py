@@ -54,10 +54,38 @@ class BlogPage:
         split = re.split("<title>", self.raw_text)
         self.page_title = split[1]
         self.page_text = re.sub("\n\n", "<p>", split[2])
-        self.page_text = self.extract_urls()
+        self.page_text = self.extract_urls(self.page_text)
+        self.page_text = self.quote(self.page_text)
 
-    def extract_urls(self):
-        stage_one = re.split("}}", self.page_text)
+    # def quote(self, string):
+    #     toggle = True
+    #     for i in range(string.count("\"\"")):
+    #         if toggle:
+    #             string = re.sub("\"\"", '<div class="quote_div">\n<i>\"', string, count=1)
+    #         else:
+    #             string = re.sub("\"\"", '\"</i>\n</div>', string, count=1)
+    #         toggle = not toggle
+    #     return string
+
+    def quote(self, string):
+        open_div = '<div class="quote_div">\n'
+        close_div = '</div>'
+        for i in range(int(string.count("\"\"")/2)):
+            quotes = re.findall('""(.*?)""', string, flags=re.DOTALL)
+            for quote in quotes:
+                if "|" in quote:
+                    url = re.findall('(.*?)\|', quote, flags=re.DOTALL)[0]
+                    open_div += '<a href="'+url+'" class="quote_hyperlink">'
+                    close_div = "</a>" + close_div
+                    quote = re.sub('(.*?)\|', "", quote, flags=re.DOTALL)
+                quote = open_div + '"' + quote + '"' + close_div
+                string = re.sub('""(.*?)""', quote, string, count=1, flags=re.DOTALL)
+                print(quote)
+                print(string)
+        return string
+
+    def extract_urls(self, string):
+        stage_one = re.split("}}", string)
         stage_two = [re.split("{{", x) for x in stage_one]
         for i in range(len(stage_two)):
             part = stage_two[i]

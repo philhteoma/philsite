@@ -319,7 +319,31 @@ ul#menu li a:hover
   top: 0;}
 
 .blog_page_div h1
-{ font-size: 250%;}
+{ font-size: 150%;}
+
+.blog_page_div p
+{ line-height: 110%}
 
 #links
 { color: black;}
+
+.quote_div
+{ margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-style: italic;}
+
+/*.quote_hyperlink
+{ display: block;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;}*/
+
+.quote_div a:visited
+{ color: #635B53;
+  text-decoration: none;}
+
+.quote_div a
+{ color: #635B53;
+  text-decoration: none;}
