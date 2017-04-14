@@ -1,4 +1,4 @@
-import re
+import re, codecs
 
 class Blog:
     def __init__(self, app_dir):
@@ -49,8 +49,12 @@ class BlogPage:
 
 
     def format_page(self):
-        with open(self.app_dir+"/blog/posts/" + self.formal_name + ".txt", "r") as file:
-            self.raw_text = file.read()
+        try:
+            with open(self.app_dir+"/blog/posts/" + self.formal_name + ".txt", "r") as file:
+                self.raw_text = file.read()
+        except UnicodeDecodeError:
+            with codecs.open(self.app_dir+"/blog/posts/" + self.formal_name + ".txt", "r", "utf-8") as file:
+                self.raw_text = file.read()
         split = re.split("<title>", self.raw_text)
         self.page_title = split[1]
         self.page_text = re.sub("\n\n", "<p>", split[2])
