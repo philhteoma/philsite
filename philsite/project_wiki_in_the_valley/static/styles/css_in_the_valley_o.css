@@ -1,6 +1,8 @@
 body {
   background-color: black;
   margin: 0px;
+  height: 99vh;
+  width: 99vw;
 }
 
 .leftBufferDiv {
@@ -12,7 +14,7 @@ body {
   display: inline-block;
   background-color: black;
   color: lightgreen;
-  height: 120px;
+  height: 15%;
   width: 100%;
   margin: 0 0 0 0;}
 
@@ -37,20 +39,22 @@ body {
   right: 30%;}
 
 #content
-{ background-color: white;
+{ background-color: black;
   min-height: 550px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 10px;}
+  height: 85%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 
 .topDiv {
   display: inline-block;
-  width: 90%;
+  width: 97.5%;
+  height: 7%;
   background-color: lightgreen;
-  padding: 10px 5px 10px 5px;
+  padding: 10px 1% 10px 1%;
   border-style: groove;
-  margin: 0 5% 0 5%;
-  /*border: 5px solid red;*/
 }
 
 
@@ -65,36 +69,42 @@ body {
   font-size: x-large;
 }
 
+.song_div {
+  height: 85%;
+  width: 100%;
+  margin-top: 5px;
+}
+
 .leftDiv {
-  display: inline-block;
   width: 20%;
-  height: 80%;
-  /*border: 5px solid red;*/
+  height: 100%;
+  float: left;
+  background-color: lightgreen;
+  border-style: groove;
 }
 
 .chain {
   background-color: white;
-  height: 95%;
+  height: 97%;
   border: 2px solid black;
-  box-shadow: 10px 10px 5px black;
-  overflow: chain
+  margin: 5px;
+  overflow: scroll;
 }
 
 .rightDiv {
-  display: inline-block;
+  height: 100%;
+  width: 78%;
+  float: left;
+  background-color: lightgreen;
+  border-style: groove;
   float: right;
   text-align: left;
-  height: 100%;
-  width: 75%;
-  /*border: 5px solid red;*/
 }
 
 .lyrics {
-  float: right;
   background-color: white;
-  height: 95%;
-  width: 95%;
+  height: 97%;
   border: 2px solid black;
-  box-shadow: 10px 10px 5px black;
+  margin: 5px;
   overflow: scroll;
 }
