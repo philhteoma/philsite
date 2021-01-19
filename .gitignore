@@ -1,4 +1,5 @@
 *.pyc
+*.wsgi
 /philsite/log/*
 !/philsite/log/.gitkeep
 /philsite/project_gavbot/saved_gavbots/*

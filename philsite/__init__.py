@@ -110,11 +110,15 @@ if __name__ == "__main__":
     print(host_name)
 
 
-    if host_name == "Gavbot":
-        bind = "192.168.1.3"
-        port = 80 #remote
-    else:
-        bind = "127.0.0.1" #local
-        port = 5000
-
+    #if host_name == "Gavbot":
+    #bind = "192.168.1.3"
+    #port = 80 #remote
+    #else:
+    #    bind = "127.0.0.1" #local
+    #    port = 5000
+    
+    bind = "51.104.43.112"
+    port = 2000
+    
     app.run(host=bind, port=port)
+    #app.run()
