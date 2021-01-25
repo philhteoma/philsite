@@ -71,7 +71,7 @@ def links():
 
 @app.route("/physics")
 def physicsGame():
-    return render_template("physicsGame/HTML5/HtmlPerformanceTesting.html", dir_name="physicsGame/HTML5", main_static="physicsGame/HTML5")
+    return render_template("physicsGame/HTML5/HtmlPerformanceTesting.html", dir_name="physicsGame/HTML5")
 
 #
 #-----About page to be added later-----
