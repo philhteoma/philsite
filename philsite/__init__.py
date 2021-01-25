@@ -1,5 +1,5 @@
 import sys
-from flask import Flask, render_template, request, make_response, redirect, session, send_from_directory, make_response
+from flask import Flask, render_template, request, make_response, redirect, session, send_from_directory, make_response, g
 import requests
 import re
 import jinja2
@@ -12,6 +12,9 @@ import socket
 app = Flask(__name__, template_folder="")
 
 app_dir = os.path.dirname(os.path.realpath(__file__))
+module_dir = "/".join(app_dir.split("/")[:-1])
+sys.path.insert(0, module_dir)
+
 
 import philsite.blog_manager
 import philsite.project_gavbot.project_gavbot
@@ -65,6 +68,10 @@ def projects():
 @app.route("/links")
 def links():
     return render_template(dir_name+"templates/links.html", dir_name=dir_name, main_static=main_static)
+
+@app.route("/physics")
+def physicsGame():
+    return render_template("physicsGame/HTML5/HtmlPerformanceTesting.html")
 
 #
 #-----About page to be added later-----
