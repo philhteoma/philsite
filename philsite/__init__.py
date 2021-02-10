@@ -9,7 +9,7 @@ import socket
 
 #import xml.etree.ElementTree
 
-app = Flask(__name__, template_folder="")
+app = Flask(__name__, template_folder="", static_url_path="/main/static")
 
 app_dir = os.path.dirname(os.path.realpath(__file__))
 module_dir = "/".join(app_dir.split("/")[:-1])
