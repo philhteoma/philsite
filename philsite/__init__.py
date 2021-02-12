@@ -22,7 +22,7 @@ import philsite.project_noble_hq.project_noble_hq
 import philsite.project_wiki_in_the_valley.project_wiki_in_the_valley
 import philsite.project_neural.project_neural
 
-app.jinja_env.autoescape = False
+app.jinja_env.autoescape = True
 host_name = socket.gethostname()
 app.secret_key = os.urandom(32)
 blog_object = blog_manager.Blog(app_dir)
